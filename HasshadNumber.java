@@ -1,3 +1,5 @@
+package study.codereview;
+
 import java.util.Scanner;
 
 public class HasshadNum {
@@ -29,12 +31,14 @@ public class HasshadNum {
 	static boolean Solution(int x) {
 		int length = (int)(Math.log10(x)+1);	// 정수 x의 자리 수(길이)를 계산
 		int sum = 0;	// 각 자리수의 합
-		int temp = 0; // 나눠지는 자리수 저장할 변수
+		int temp = 0; // 초기 수 저장할 녀석
 		int[] arr = new int[length];	// 각 자리수 저장
+		
+		temp = x;
 		
 		for(int i = 0;i < arr.length;i++) {
 			arr[i] = x % 10;	// 각 자리수 저장될꺼고
-			temp = x / 10;	// 자리수 하나씩 짜를꺼고
+			x = x / 10;	// 자리수 하나씩 짜를꺼고
 		}
 		
 		for(int j = 0; j < arr.length; j++) {
