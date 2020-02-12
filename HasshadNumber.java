@@ -45,6 +45,8 @@ public class HasshadNum {
 			sum += arr[j];	// 각 자리수의 합
 		}
 		
+		x = temp; // x 초기값으로 변경
+		
 		if(x%sum==0) {
 			return true;
 		}else {
