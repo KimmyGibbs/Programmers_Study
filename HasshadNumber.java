@@ -8,23 +8,28 @@ public class HasshadNum {
 		boolean solRes;
 		
 		Scanner scan = new Scanner(System.in);
-		System.out.println("입력한 정수가 하샤드 수 인지를 판별합니다.");
-		System.out.print("숫자 입력 (1~10000) : ");
-		inputNum = scan.nextInt();		
+				
 		
-		Chek:while(inputNum >= 1 && inputNum <= 10000 ) {
+		while(true) {
+			System.out.println("입력한 정수가 하샤드 수 인지를 판별합니다.");
+			System.out.print("숫자 입력 (1~10000) : ");
+			inputNum = scan.nextInt();
+			
+			
 			if(inputNum < 1 || inputNum > 10000) {
 				System.out.println("숫자의 범위를 벗어났습니다. 프로그램을 종료합니다.");
 				break;
-			}
-			solRes = Solution(inputNum);
-			if(solRes==true){
-				System.out.println(inputNum + "은 하샤드 수 입니다.");
-				break;
 			}else {
-				System.out.println(inputNum + "은 하샤드 수 가 아닙니다.");
-				break;
+				solRes = Solution(inputNum);
+				if(solRes==true){
+					System.out.println(inputNum + "은 하샤드 수 입니다.");
+					continue;
+				}else {
+					System.out.println(inputNum + "은 하샤드 수 가 아닙니다.");
+					continue;
+				}
 			}
+			
 		}
 	}
 	
